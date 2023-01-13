@@ -2,7 +2,6 @@ require('dotenv').config()
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 const botRoutes = require('../routes/bot')
 const messageRoutes = require('../routes/message')
 
