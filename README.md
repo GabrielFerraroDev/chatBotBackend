@@ -29,3 +29,5 @@ Para rodar os testes execute:
 ```
 npm run test
 ```
+
+A collection no Postman está no arquivo backend-test-bra.postman_collection.json
