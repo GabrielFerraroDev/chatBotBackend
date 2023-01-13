@@ -2,8 +2,15 @@ const messageRepository = require('../repositories/messageRepository')
 
 const getMessages = async (req, res) => {
   try {
-    const messages = await messageRepository.find()
-    res.status(200).json(messages)
+    if (req.query.conversationId) {
+      const messages = await messageRepository.findByConversationId(
+        req.query.conversationId
+      )
+      res.status(200).json(messages)
+    } else {
+      const messages = await messageRepository.find()
+      res.status(200).json(messages)
+    }
   } catch (error) {
     res.status(500).json({ error })
   }

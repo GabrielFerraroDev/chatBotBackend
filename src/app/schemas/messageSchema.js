@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const messageSchema = new mongoose.Schema({
+  id: { type: String, required: true },
   conversationId: { type: String, required: true },
   timestamp: { type: Date, default: Date.now },
   from: { type: String, required: true },

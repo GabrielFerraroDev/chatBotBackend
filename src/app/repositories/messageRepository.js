@@ -9,7 +9,7 @@ const findById = (id) => {
 }
 
 const findByConversationId = (conversationId) => {
-  return Message.find({ conversationId })
+  return Message.find({ conversationId: conversationId })
 }
 
 const create = (message) => {
