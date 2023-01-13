@@ -10,6 +10,7 @@ const { createMongoConnection } = require('../database')
 createMongoConnection()
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.disable('etag')
 app.use(bodyParser.json())
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', botRoutes)
 app.use('/', messageRoutes)
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is running on port 3000')
 })
 module.exports = app

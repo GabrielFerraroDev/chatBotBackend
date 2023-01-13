@@ -5,11 +5,11 @@ const find = () => {
 }
 
 const findById = (id) => {
-  return Bot.find({ id: id }).exec()
+  return Bot.findOne({ id: id })
 }
 
 const findByIdAndUpdate = (id, data) => {
-  return Bot.updateOne({ id: id }, data)
+  return Bot.findOneAndUpdate({ id: id }, data, { new: true })
 }
 
 const findByIdAndDelete = (id) => {

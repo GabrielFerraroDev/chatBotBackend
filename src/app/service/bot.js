@@ -50,7 +50,7 @@ const deleteBot = async (req, res) => {
     if (!bot) {
       res.status(404).json({ message: 'Bot not found' })
     } else {
-      res.status(200).json({ message: 'Bot deleted' })
+      res.status(204).json({ message: 'Bot deleted' })
     }
   } catch (error) {
     res.status(500).json({ error })

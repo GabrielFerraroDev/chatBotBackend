@@ -5,7 +5,7 @@ const find = () => {
 }
 
 const findById = (id) => {
-  return Message.find({ id: id }).exec()
+  return Message.findOne({ id: id })
 }
 
 const findByConversationId = (conversationId) => {
@@ -16,9 +16,14 @@ const create = (message) => {
   return Message.create(message)
 }
 
+const findByIdAndDelete = (id) => {
+  return Message.deleteOne({ id: id })
+}
+
 module.exports = {
   find,
   findById,
   findByConversationId,
   create,
+  findByIdAndDelete,
 }
