@@ -19,6 +19,9 @@ const findByIdAndDelete = (id) => {
 const create = (bot) => {
   return Bot.create(bot)
 }
+const clearDatabase = async () => {
+  await Bot.deleteMany({})
+}
 
 module.exports = {
   find,
@@ -26,4 +29,5 @@ module.exports = {
   findByIdAndUpdate,
   findByIdAndDelete,
   create,
+  clearDatabase,
 }

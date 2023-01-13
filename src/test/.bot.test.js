@@ -17,6 +17,9 @@ describe('Test the /bots path', () => {
       '36b9f842-ee97-11e8-9443-0242ac120002'
     )
   })
+  afterAll(async () => {
+    await botRepository.clearDatabase()
+  })
 
   test('It should return all bots', async () => {
     const response = await request(app).get('/bots')

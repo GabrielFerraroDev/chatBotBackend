@@ -19,6 +19,9 @@ const create = (message) => {
 const findByIdAndDelete = (id) => {
   return Message.deleteOne({ id: id })
 }
+const clearDatabase = async () => {
+  await Message.deleteMany({})
+}
 
 module.exports = {
   find,
@@ -26,4 +29,5 @@ module.exports = {
   findByConversationId,
   create,
   findByIdAndDelete,
+  clearDatabase,
 }

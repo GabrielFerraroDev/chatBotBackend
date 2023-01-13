@@ -4,7 +4,6 @@ const request = require('supertest')
 const app = require('../app/api')
 const messageRepository = require('../app/repositories/messageRepository')
 describe('Test the /messages path', () => {
-  
   beforeEach(async () => {
     await messageRepository.create({
       id: '16edd3b3-3f75-40df-af07-2a3813a79ce9',
@@ -20,6 +19,9 @@ describe('Test the /messages path', () => {
     await messageRepository.findByIdAndDelete(
       '16edd3b3-3f75-40df-af07-2a3813a79ce9'
     )
+  })
+  afterAll(async () => {
+    await messageRepository.clearDatabase()
   })
 
   test('It should return all messages', async () => {
