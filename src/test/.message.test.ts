@@ -41,6 +41,12 @@ describe('Test the /messages path', () => {
     })
     expect(response.statusCode).toBe(201)
     expect(response.body.text).toBe('Oi! Gostaria de verificar seu saldo?')
+    expect(response.body.id).toBe('16edd3b3-3f75-40df-af07-2a3813a79ce0')
+    expect(response.body.conversationId).toBe(
+      '7665ada8-3448-4acd-a1b7-d688e68fe9a2'
+    )
+    expect(response.body.from).toBe('36b9f842-ee97-11e8-9443-0242ac120002')
+    expect(response.body.to).toBe('16edd3b3-3f75-40df-af07-2a3813a79ce9')
   })
 
   test('It should get a message by id', async () => {
@@ -49,6 +55,12 @@ describe('Test the /messages path', () => {
     )
     expect(response.statusCode).toBe(200)
     expect(response.body.text).toBe('Oi! Como posso te ajudar?')
+    expect(response.body.id).toBe('16edd3b3-3f75-40df-af07-2a3813a79ce9')
+    expect(response.body.conversationId).toBe(
+      '7665ada8-3448-4acd-a1b7-d688e68fe9a1'
+    )
+    expect(response.body.from).toBe('36b9f842-ee97-11e8-9443-0242ac120002')
+    expect(response.body.to).toBe('16edd3b3-3f75-40df-af07-2a3813a79ce9')
   })
 
   test('It should get messages by conversationId', async () => {

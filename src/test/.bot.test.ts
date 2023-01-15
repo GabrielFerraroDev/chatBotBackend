@@ -33,6 +33,7 @@ describe('Test the /bots path', () => {
       .send({ name: 'test-bot-2', id: '36b9f842-ee97-11e8-9443-0242ac120003' })
     expect(response.statusCode).toBe(201)
     expect(response.body.name).toBe('test-bot-2')
+    expect(response.body.id).toBe('36b9f842-ee97-11e8-9443-0242ac120003')
   })
 
   test('It should update a bot', async () => {
@@ -41,6 +42,7 @@ describe('Test the /bots path', () => {
       .send({ name: 'test-bot-updated' })
     expect(response.statusCode).toBe(200)
     expect(response.body.name).toBe('test-bot-updated')
+    expect(typeof response.body.id).toBe('string')
   })
 
   test('It should get a bot by id', async () => {
@@ -49,6 +51,7 @@ describe('Test the /bots path', () => {
     )
     expect(response.statusCode).toBe(200)
     expect(response.body.name).toBe('test-bot')
+    expect(typeof response.body.id).toBe('string')
   })
 
   test('It should delete a bot', async () => {
