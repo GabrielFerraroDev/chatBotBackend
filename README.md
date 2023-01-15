@@ -2,6 +2,18 @@
 
 Teste Backend Bradesco Seguros
 
+## Tecnologias utilizadas
+
+dotenv:Para carregar variáveis de ambiente.
+express:Criação da API.
+body-parser:Trabalhar com os dados vindos da requisição.
+express-winston:Log de requisições.
+jest: Testes automatizados.
+mongoose: Interação com o banco MongoDB.
+ts-jest e ts-node: Para utilizar typescript no projeto com testes.
+supertest:Para testar as requisições da API
+cross-env:Para possibilitar o uso de multiplos sistemas operacionais
+
 ## Getting started
 
 Para conseguir rodar o código preencha as variaveis de ambiente no .env, há um .env.example para o apoio.
