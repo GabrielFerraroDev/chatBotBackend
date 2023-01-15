@@ -1,7 +1,6 @@
 import { Request, Response } from 'express'
 import { Bot } from '../schemas/botSchema'
 import botRepository from '../repositories/botRepository'
-import { validateBot } from '../validator/botValidator'
 
 export const getBots = async (req: Request, res: Response) => {
   try {
