@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import { Message } from '../schemas/messageSchema'
 
 import messageRepository from '../repositories/messageRepository'
 
@@ -35,7 +36,7 @@ export const getMessageById = async (req: Request, res: Response) => {
 
 export const createMessage = async (req: Request, res: Response) => {
   try {
-    const message = await messageRepository.create(req.body)
+    const message: Message = await messageRepository.create(req.body)
     res.status(201).json(message)
   } catch (error) {
     res.status(400).json({ error })
