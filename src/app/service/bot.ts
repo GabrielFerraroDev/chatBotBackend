@@ -39,6 +39,7 @@ export const updateBot = async (req: Request, res: Response) => {
       req.params.id,
       req.body
     )
+    console.log(bot)
     if (!bot) {
       res.status(404).json({ message: 'Bot not found' })
     } else {
@@ -51,11 +52,12 @@ export const updateBot = async (req: Request, res: Response) => {
 
 export const deleteBot = async (req: Request, res: Response) => {
   try {
-    const bot: any = await botRepository.findByIdAndDelete(req.params.id)
-    if (!bot) {
-      res.status(404).json({ message: 'Bot not found' })
-    } else {
+    const resDelete: any = await botRepository.findByIdAndDelete(req.params.id)
+
+    if (resDelete.deletedCount) {
       res.status(204).json({ message: 'Bot deleted' })
+    } else {
+      res.status(404).json({ message: 'Bot not found' })
     }
   } catch (error) {
     res.status(500).json({ error })
