@@ -23,7 +23,7 @@ app.use('/', botRoutes)
 app.use('/', messageRoutes)
 
 app.listen(port, () => {
-  winstonInstance.info(`Server is running on port ${port}`)
+  winstonInstance.debug(`Server is running on port ${port}`)
 })
 
 export default app

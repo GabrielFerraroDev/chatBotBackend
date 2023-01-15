@@ -11,7 +11,7 @@ const createMongoConnection = (): mongoose.Connection => {
     mongoose.connect(`mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`)
   }
 
-  winstonInstance.info('Conected!')
+  winstonInstance.debug('Conected!')
 
   return mongoose.connection
 }

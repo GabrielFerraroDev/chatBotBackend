@@ -33,7 +33,10 @@ export const winstonInstance = winston.createLogger({
       filename: './src/logs/error.log',
       level: 'error',
     }),
-    new winston.transports.File({ filename: './src/logs/info.log' }),
+    new winston.transports.File({
+      filename: './src/logs/debug.log',
+      level: 'info',
+    }),
   ],
   exitOnError: false,
 })
