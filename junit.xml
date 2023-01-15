@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="6.681">
+  <testsuite name="Test the /messages path" errors="0" failures="0" skipped="0" timestamp="2023-01-15T17:48:55" time="5.515" tests="4">
+    <testcase classname="Test the /messages path It should return all messages" name="Test the /messages path It should return all messages" time="0.085">
+    </testcase>
+    <testcase classname="Test the /messages path It should create a message" name="Test the /messages path It should create a message" time="0.044">
+    </testcase>
+    <testcase classname="Test the /messages path It should get a message by id" name="Test the /messages path It should get a message by id" time="0.014">
+    </testcase>
+    <testcase classname="Test the /messages path It should get messages by conversationId" name="Test the /messages path It should get messages by conversationId" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="Test the /bots path" errors="0" failures="0" skipped="0" timestamp="2023-01-15T17:48:55" time="5.529" tests="5">
+    <testcase classname="Test the /bots path It should return all bots" name="Test the /bots path It should return all bots" time="0.085">
+    </testcase>
+    <testcase classname="Test the /bots path It should create a bot" name="Test the /bots path It should create a bot" time="0.044">
+    </testcase>
+    <testcase classname="Test the /bots path It should update a bot" name="Test the /bots path It should update a bot" time="0.017">
+    </testcase>
+    <testcase classname="Test the /bots path It should get a bot by id" name="Test the /bots path It should get a bot by id" time="0.013">
+    </testcase>
+    <testcase classname="Test the /bots path It should delete a bot" name="Test the /bots path It should delete a bot" time="0.011">
+    </testcase>
+  </testsuite>
+</testsuites>
