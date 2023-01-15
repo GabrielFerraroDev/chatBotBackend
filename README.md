@@ -13,6 +13,7 @@ mongoose: Interação com o banco MongoDB.
 ts-jest e ts-node: Para utilizar typescript no projeto com testes.
 supertest:Para testar as requisições da API
 cross-env:Para possibilitar o uso de multiplos sistemas operacionais
+jest-junit:Para utilizar Coverage e salvar os resultados dos testes em xml
 
 ## Getting started
 
