@@ -4,6 +4,7 @@ Teste Backend Bradesco Seguros
 
 ## Tecnologias utilizadas
 
+```
 dotenv:Para carregar variáveis de ambiente.
 express:Criação da API.
 body-parser:Trabalhar com os dados vindos da requisição.
@@ -14,6 +15,7 @@ ts-jest e ts-node: Para utilizar typescript no projeto com testes.
 supertest:Para testar as requisições da API
 cross-env:Para possibilitar o uso de multiplos sistemas operacionais
 jest-junit:Para utilizar Coverage e salvar os resultados dos testes em xml
+```
 
 ## Getting started
 
