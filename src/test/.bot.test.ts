@@ -1,8 +1,8 @@
-process.env.PORT = 3000
+process.env.PORT = '3000'
 
-const request = require('supertest')
-const app = require('../app/api')
-const botRepository = require('../app/repositories/botRepository')
+import request from 'supertest'
+import app from '../app/api'
+import botRepository from '../app/repositories/botRepository'
 
 describe('Test the /bots path', () => {
   beforeEach(async () => {

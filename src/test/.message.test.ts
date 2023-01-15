@@ -1,8 +1,9 @@
-process.env.PORT = 3001
+process.env.PORT = '3001'
 
-const request = require('supertest')
-const app = require('../app/api')
-const messageRepository = require('../app/repositories/messageRepository')
+import request from 'supertest'
+import app from '../app/api'
+import messageRepository from '../app/repositories/messageRepository'
+
 describe('Test the /messages path', () => {
   beforeEach(async () => {
     await messageRepository.create({

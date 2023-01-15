@@ -1,10 +1,14 @@
-const messageRepository = require('../repositories/messageRepository')
+import { Request, Response } from 'express'
 
-const getMessages = async (req, res) => {
+import messageRepository from '../repositories/messageRepository'
+
+export const getMessages = async (req: Request, res: Response) => {
   try {
-    if (req.query.conversationId) {
+    const conversationId: string = (req.query.conversationId as string) || ''
+
+    if (conversationId) {
       const messages = await messageRepository.findByConversationId(
-        req.query.conversationId
+        conversationId
       )
       res.status(200).json(messages)
     } else {
@@ -16,7 +20,7 @@ const getMessages = async (req, res) => {
   }
 }
 
-const getMessageById = async (req, res) => {
+export const getMessageById = async (req: Request, res: Response) => {
   try {
     const message = await messageRepository.findById(req.params.id)
     if (!message) {
@@ -29,17 +33,11 @@ const getMessageById = async (req, res) => {
   }
 }
 
-const createMessage = async (req, res) => {
+export const createMessage = async (req: Request, res: Response) => {
   try {
     const message = await messageRepository.create(req.body)
     res.status(201).json(message)
   } catch (error) {
     res.status(400).json({ error })
   }
-}
-
-module.exports = {
-  getMessages,
-  getMessageById,
-  createMessage,
 }

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
-const createMongoConnection = () => {
+const createMongoConnection = (): mongoose.Connection => {
   if (process.env.NODE_ENV === 'test') {
     mongoose.connect(
       `mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}_test`
@@ -11,9 +11,7 @@ const createMongoConnection = () => {
 
   console.log('Conected!')
 
-  return mongoose
+  return mongoose.connection
 }
 
-module.exports = {
-  createMongoConnection,
-}
+export { createMongoConnection }
