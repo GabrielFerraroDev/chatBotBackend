@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 import botRoutes from '../routes/bot'
 import messageRoutes from '../routes/message'
 import { createMongoConnection } from '../database'
-import { appLogger, errorLogger } from '../logger'
+import { appLogger, errorLogger, winstonInstance } from '../logger'
 
 createMongoConnection()
 
@@ -23,7 +23,7 @@ app.use('/', botRoutes)
 app.use('/', messageRoutes)
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
+  winstonInstance.info(`Server is running on port ${port}`)
 })
 
 export default app

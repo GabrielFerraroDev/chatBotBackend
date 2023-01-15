@@ -39,7 +39,6 @@ export const updateBot = async (req: Request, res: Response) => {
       req.params.id,
       req.body
     )
-    console.log(bot)
     if (!bot) {
       res.status(404).json({ message: 'Bot not found' })
     } else {

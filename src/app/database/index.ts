@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { winstonInstance } from '../logger'
 
 const createMongoConnection = (): mongoose.Connection => {
   mongoose.set('strictQuery', true)
@@ -10,7 +11,7 @@ const createMongoConnection = (): mongoose.Connection => {
     mongoose.connect(`mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`)
   }
 
-  console.log('Conected!')
+  winstonInstance.info('Conected!')
 
   return mongoose.connection
 }

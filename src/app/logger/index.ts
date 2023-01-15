@@ -5,7 +5,7 @@ import expressWinston from 'express-winston'
 const level = process.env.LOG_LEVEL || 'debug'
 const silent = process.env.NODE_ENV === 'test'
 
-const winstonInstance = winston.createLogger({
+export const winstonInstance = winston.createLogger({
   defaultMeta: { service: 'App' },
   format: winston.format.combine(
     winston.format.colorize(),
@@ -15,7 +15,12 @@ const winstonInstance = winston.createLogger({
     winston.format.printf((info) => {
       const res = JSON.stringify(_.get(info, 'meta.res', ''))
       const msg = info.stack || info.message
-      return `${info.level} ${info.timestamp} : ${msg} : ${res}}`
+
+      if (info.meta) {
+        return `${info.level} ${info.timestamp} : ${msg} : ${res}}`
+      } else {
+        return `${info.level} ${info.timestamp} : ${msg}}`
+      }
     })
   ),
   transports: [
@@ -24,6 +29,11 @@ const winstonInstance = winston.createLogger({
       level,
       silent,
     }),
+    new winston.transports.File({
+      filename: './src/logs/error.log',
+      level: 'error',
+    }),
+    new winston.transports.File({ filename: './src/logs/info.log' }),
   ],
   exitOnError: false,
 })
