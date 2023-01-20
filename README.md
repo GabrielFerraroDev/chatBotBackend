@@ -1,6 +1,8 @@
-# Teste Backend Bradesco Seguros
+# Descrição
 
-Teste Backend Bradesco Seguros
+Este projeto é uma API básica de chatbot que permite aos usuários criar, ler, atualizar e excluir chatbots, bem como criar e ler mensagens. Ele é construído usando Node.js, TypeScript e MongoDB. A API usa a estrutura Express.js e foi projetada para ser fácil de usar e escalável. O projeto também inclui validação básica e tratamento de erros, bem como testes com Jest. A API também é equipada com registro e gerenciamento de variáveis ​​de ambiente usando o pacote dotenv. O aplicativo também é conteinerizado com o Docker para facilitar a implantação.
+
+![backendImg](./backendImg.png)
 
 ## Tecnologias utilizadas
 
